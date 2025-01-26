@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Surya Ku</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            color: white;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .hidden {
+            display: none;
+        }
+        .box {
+            width: 80%;
+            max-width: 450px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .box:hover {
+            transform: translateY(-10px);
+        }
+        .box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .box img:hover {
+            transform: scale(1.05);
+        }
+        .box .text {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        .box .text h3 {
+            font-size: 36px;
+            color: #007BFF;
+            text-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+            margin-bottom: 10px;
+        }
+        .box .link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 25px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .box .link:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+        .start-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 25px;
+            font-size: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .start-btn:hover {
+            background-color: #218838;
+            transform: translateY(-5px);
+        }
+        .back-btn {
+            background-color: #ffc107;
+            color: white;
+            padding: 15px 25px;
+            font-size: 20px;
+            border-radius: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: #e0a800;
+            transform: translateY(-5px);
+        }
+        .solar {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease;
+        }
+        
+        .solar {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.7), 0 0 30px rgba(255, 140, 0, 0.5);
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 69, 0, 0.7), 0 0 30px rgba(255, 140, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 99, 71, 0.8), 0 0 35px rgba(255, 165, 0, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 69, 0, 0.7), 0 0 30px rgba(255, 140, 0, 0.5);
+    }
+}
+
+        /* Video Menu */
+        #video-menu {
+            text-align: center;
+        }
+        #video-menu {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#video-menu button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #28a745;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#video-menu button:hover {
+    background-color: #218838;
+    transform: translateY(-5px);
+}
+
+
+..back-to-final-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 25px;
+    background-color: #ff5722;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-final-btn:hover {
+    background-color: #e64a19;
+    transform: translateY(-5px);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="developer-text" style="font-size: 3rem; color: #005bff; text-shadow: 0 0 15px #26ffe7, 0 0 30px #00ff4a, 0 0 45px #6b00ff, 0 0 60px #00efff; margin-bottom: 10px;">
+            DEVLOPER FIQRI
+        </h1>
+        <h1 id="intro-text">Tata Surya Ku</h1>
+        <button class="start-btn" id="start-btn">Mulai</button>
+        <img src="solar sistem.jpg" alt="Tata Surya" class="solar" id="start-image">
+    </div>
+
+    <div id="content" class="hidden">
+        <div class="box" id="planet-box">
+            <img src="matahari.jpg" alt="Planet Image" id="planet-img">
+            <div class="text" id="planet-text">
+                <h3>Matahari</h3>
+                <p>Matahari adalah pusat dari Tata Surya kita dan sumber utama cahaya serta energi bagi semua planet di sekitarnya.</p>
+            </div>
+            <button class="back-btn" id="back-btn">Kembali</button>
+            <a href="#" class="link" id="next-btn">Lanjut</a>
+        </div>
+    </div>
+
+<div id="final-content" class="hidden">
+    <h1>Surya</h1>
+    <ul>  
+        <li><strong>Matahari adalah</strong> pusat dari Tata Surya kita dan sumber utama cahaya serta energi bagi semua planet di sekitarnya. Berikut adalah ciri-ciri Matahari:</li>
+    </ul>
+    <ul>
+        <li><strong>Ukuran:</strong> Matahari memiliki diameter sekitar 1,39 juta kilometer, sekitar 109 kali ukuran Bumi.</li>
+        <li><strong>Komposisi:</strong> Matahari terutama terdiri dari hidrogen (sekitar 75%) dan helium (sekitar 24%), dengan sedikit elemen lainnya seperti oksigen, karbon, neon, dan besi.</li>
+        <li><strong>Suhu:</strong> Suhu di inti Matahari mencapai sekitar 15 juta derajat Celsius, sedangkan suhu permukaannya sekitar 5.500 derajat Celsius.</li>
+        <li><strong>Energi:</strong> Matahari menghasilkan energi melalui reaksi fusi nuklir di intinya, yang menghasilkan cahaya dan panas yang mempengaruhi iklim dan cuaca di Bumi.</li>
+        <li><strong>Gravitasi:</strong> Gravitasi Matahari sangat kuat, sekitar 28 kali lebih kuat dibandingkan dengan gravitasi Bumi, yang memungkinkan Matahari untuk menjaga planet-planet tetap berada di orbitnya.</li>
+        <li><strong>Waktu Revolusi:</strong> Matahari tidak diam di tengah Tata Surya. Sebagai bagian dari Galaksi Bima Sakti, Matahari juga bergerak bersama dengan seluruh sistem bintang di galaksi tersebut. Dibutuhkan sekitar 225 juta tahun untuk satu kali revolusi keliling pusat galaksi.</li>
+    </ul>
+    <button class="back-btn" id="back-to-planet">Kembali ke Planet</button>
+      <button class="start-btn" id="final-btn">Lanjut</button>
+</div>
+
+    <div id="video-menu" class="hidden">
+        <h3 id="video-title">VIDIO MENU</h3>
+        <button class="start-btn" id="video1-btn">VIDIO1</button>
+        <button class="start-btn" id="video2-btn">VIDIO2</button>
+        <button class="start-btn" id="video3-btn">VIDIO3</button>
+        <button class="start-btn" id="video4-btn">VIDIO4</button>
+        <button class="start-btn" id="video5-btn">VIDIO5</button>
+        <button class="start-btn" id="video6-btn">VIDIO6</button>
+        <button class="start-btn" id="video7-btn">VIDIO7</button>
+        <button class="start-btn" id="video8-btn">VIDIO8</button>
+        <button class="start-btn" id="video9-btn">VIDIO9</button>
+        <button class="start-btn" id="video10-btn">VIDIO10</button>
+        <button class="back-to-final-btn" id="back-to-final">Kembali penjelasan</button>
+
+    </div>
+
+    <div id="video-controls" class="hidden">
+        <video id="video-player" controls style="width: 90%; max-width: 500px; margin: 20px auto; display: block;">
+            <source id="video-source" src="VIDIO1.mp4" type="video/mp4">
+            Browser Anda tidak mendukung elemen video.
+        </video>
+        <button class="back-btn" id="back-to-menu">Kembali ke Menu</button>
+    </div>
+
+    <audio id="audio" loop>
+        <source src="Lagu.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <script>
+        const startButton = document.getElementById('start-btn');
+        const introText = document.getElementById('intro-text');
+        const content = document.getElementById('content');
+        const nextButton = document.getElementById('next-btn');
+        const backButton = document.getElementById('back-btn');
+        const planetImg = document.getElementById('planet-img');
+        const planetText = document.getElementById('planet-text');
+        const audio = document.getElementById('audio');
+        const startImage = document.getElementById('start-image');
+        const finalContent = document.getElementById('final-content');
+        const finalButton = document.getElementById('final-btn');
+        const videoMenu = document.getElementById('video-menu');
+        const videoControls = document.getElementById('video-controls');
+        const videoTitle = document.getElementById('video-title');
+        const videoPlayer = document.getElementById('video-player');
+        const videoSource = document.getElementById('video-source');
+        const backToMenuButton = document.getElementById('back-to-menu');
+
+        const videoButtons = {
+            'video1-btn': 'VIDIO1.mp4',
+            'video2-btn': 'VIDIO2.mp4',
+            'video3-btn': 'VIDIO3.mp4',
+            'video4-btn': 'VIDIO4.mp4',
+            'video5-btn': 'VIDIO5.mp4',
+            'video6-btn': 'VIDIO6.mp4',
+            'video7-btn': 'VIDIO7.mp4',
+            'video8-btn': 'VIDIO8.mp4',
+            'video9-btn': 'VIDIO9.mp4',
+            'video10-btn': 'VIDIO10.mp4',
+        };
+
+        startButton.addEventListener('click', () => {
+            introText.classList.add('hidden');
+            startButton.classList.add('hidden');
+            content.classList.remove('hidden');
+            audio.play();
+            startImage.style.display = 'none';
+            updatePlanet(currentPlanetIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentPlanetIndex++;
+            if (currentPlanetIndex < planets.length) {
+                updatePlanet(currentPlanetIndex);
+            } else if (currentPlanetIndex === planets.length) {
+                nextButton.textContent = "Berikutnya";
+                content.classList.add('hidden');
+                finalContent.classList.remove('hidden');
+            }
+        });
+
+        backButton.addEventListener('click', () => {
+            if (currentPlanetIndex > 0) {
+                currentPlanetIndex--;
+                updatePlanet(currentPlanetIndex);
+            }
+        });
+
+        finalButton.addEventListener('click', () => {
+            finalContent.classList.add('hidden');
+            videoMenu.classList.remove('hidden');
+        });
+
+        for (const buttonId in videoButtons) {
+            const button = document.getElementById(buttonId);
+            button.addEventListener('click', () => {
+                videoTitle.textContent = buttonId.replace('-btn', '').toUpperCase();
+                videoSource.src = videoButtons[buttonId];
+                videoPlayer.load();
+                videoControls.classList.remove('hidden');
+                videoMenu.classList.add('hidden');
+            });
+        }
+
+        backToMenuButton.addEventListener('click', () => {
+            videoControls.classList.add('hidden');
+            videoMenu.classList.remove('hidden');
+        });
+
+        function updatePlanet(index) {
+            const planet = planets[index];
+            planetImg.src = planet.imgSrc;
+            planetText.innerHTML = `<h3>${planet.name}</h3><p>${planet.description}</p>`;
+        }
+        backToMenuButton.addEventListener('click', () => {
+    videoPlayer.pause(); // Menghentikan video
+    videoPlayer.currentTime = 0; // Mengatur waktu video ke awal
+    videoControls.classList.add('hidden');
+    videoMenu.classList.remove('hidden');
+});
+
+const backToPlanetButton = document.getElementById('back-to-planet');
+
+backToPlanetButton.addEventListener('click', () => {
+    finalContent.classList.add('hidden');
+    content.classList.remove('hidden');
+    updatePlanet(currentPlanetIndex); // Tampilkan planet terakhir yang dilihat
+});
+
+finalButton.addEventListener('click', () => {
+    finalContent.classList.add('hidden');
+    videoMenu.classList.remove('hidden');
+});
+
+// Ambil elemen tombol kembali ke final
+const backToFinalButton = document.getElementById('back-to-final');
+
+// Tambahkan event listener untuk tombol kembali ke final
+backToFinalButton.addEventListener('click', () => {
+    // Sembunyikan menu video
+    videoMenu.classList.add('hidden');
+    // Tampilkan final-content
+    finalContent.classList.remove('hidden');
+});
+
+
+        const planets = [
+            { name: "Matahari", imgSrc: "matahari.jpeg", description: "Matahari adalah pusat dari Tata Surya kita dan sumber utama cahaya serta energi bagi semua planet di sekitarnya." },
+            { name: "Merkurius", imgSrc: "merkurius.jpeg", description: "Merkurius adalah planet terdekat dengan Matahari. Memiliki suhu ekstrem dan permukaan yang terhampar bebatuan." },
+            { name: "Venus", imgSrc: "venus.jpeg", description: "Venus memiliki atmosfer tebal yang mengandung gas beracun dan suhu yang sangat tinggi." },
+            { name: "Bumi", imgSrc: "bumi.jpeg", description: "Bumi adalah satu-satunya planet yang diketahui mendukung kehidupan. Permukaannya terdiri dari air dan daratan." },
+            { name: "Bulan", imgSrc: "bulan.jpeg", description: "Bulan adalah satelit alami Bumi yang memiliki permukaan berbatu dan penuh kawah." },
+            { name: "Mars", imgSrc: "mars.jpeg", description: "Mars, planet merah, memiliki atmosfer tipis dan cuaca yang dingin. Mars dikenal karena bentuk permukaan yang berbatu." },
+            { name: "Jupiter", imgSrc: "jupiter.jpg", description: "Jupiter adalah planet terbesar di Tata Surya, dengan atmosfer yang terbuat dari gas dan memiliki cincin kecil di sekelilingnya." },
+            { name: "Saturnus", imgSrc: "saturnus.jpeg", description: "Saturnus terkenal dengan cincin besar yang mengelilinginya, yang terbuat dari es dan debu." },
+            { name: "Uranus", imgSrc: "uranus.jpeg", description: "Uranus adalah planet gas raksasa yang memiliki warna biru kehijauan karena adanya metana dalam atmosfernya." },
+            { name: "Neptunus", imgSrc: "neptunus.jpeg", description: "Neptunus adalah planet terjauh dari Matahari, dengan warna biru yang disebabkan oleh metana di atmosfernya." },
+            { name: "Sabuk Asteroid", imgSrc: "sabuk.jpeg", description: "Sabuk Asteroid adalah daerah yang terletak antara Mars dan Jupiter, tempat berkumpulnya banyak asteroid yang sebagian besar berukuran kecil." }
+        ];
+
+        let currentPlanetIndex = 0;
+    </script>
+</body>
+</html>
